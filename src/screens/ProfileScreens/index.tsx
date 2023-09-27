@@ -81,12 +81,14 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: '600',
     textAlign: 'center',
+    fontFamily: 'Montserrat-SemiBold',
   },
   hobbyTitle: {
     fontSize: 16,
     color: colors.dark,
     fontWeight: '600',
     textAlign: 'center',
+    fontFamily: 'Montserrat-SemiBold',
   },
   background: {
     backgroundColor: colors.secondary,
@@ -108,10 +110,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.dark,
     marginTop: 16,
+    fontFamily: 'Montserrat-Bold',
   },
   subtitle: {
     fontWeight: '600',
     color: colors.dark,
     fontStyle: 'italic',
+    fontFamily: 'Montserrat-SemiBold',
   },
 });
