@@ -19,6 +19,7 @@ export default function ProfileScreen() {
         <Text style={styles.inputLabel}>Nama</Text>
         <TextInput
           placeholder="Masukkan Nama"
+          placeholderTextColor="#aaaaaa"
           style={styles.inputText}
           onChangeText={onChangeForm('name')}
           defaultValue={form?.name}
@@ -26,9 +27,10 @@ export default function ProfileScreen() {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.inputLabel}>Hobby</Text>
+        <Text style={styles.inputLabel}>Hobi</Text>
         <TextInput
-          placeholder="Masukkan Nama"
+          placeholder="Masukkan Hobi"
+          placeholderTextColor="#aaaaaa"
           style={styles.inputText}
           onChangeText={onChangeForm('hobby')}
           defaultValue={form?.hobby}
@@ -60,6 +62,7 @@ const styles = StyleSheet.create({
   inputText: {
     borderBottomWidth: 1,
     fontFamily: 'Montserrat-Regular',
+    color: colors.dark,
   },
   inputLabel: {
     color: colors.dark,
