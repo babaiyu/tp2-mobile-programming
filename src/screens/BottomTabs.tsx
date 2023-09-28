@@ -14,6 +14,8 @@ import {
   ProfileInactive,
 } from '../assets';
 import colors from '../constants/colors';
+import {storage} from '../storages';
+import {StyleSheet, Text, View} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,13 +49,27 @@ const TabIcon = ({
   return null;
 };
 
+const HeaderRight = () => {
+  const jsonUser = storage.getString('user');
+  if (jsonUser !== undefined) {
+    const userObj = JSON.parse(jsonUser);
+    return (
+      <View style={styles.headerRight}>
+        <Text style={styles.title}>{userObj?.name}</Text>
+      </View>
+    );
+  }
+  return null;
+};
+
 export default function BottomTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
+        headerTitle: '',
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.dark,
+        headerRight: () => <HeaderRight />,
       }}>
       <Tab.Screen
         name="HOME"
@@ -84,3 +100,14 @@ export default function BottomTabs() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  headerRight: {
+    marginRight: 16,
+  },
+  title: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 18,
+    color: colors.dark,
+  },
+});
