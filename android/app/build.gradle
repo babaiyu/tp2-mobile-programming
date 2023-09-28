@@ -75,7 +75,7 @@ android {
 
     namespace "com.tp2"
     defaultConfig {
-        applicationId "com.tp2"
+        applicationId "com.babaiyu.tp2"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
